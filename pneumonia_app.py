@@ -109,7 +109,7 @@ def main():
 
             # Slider for selecting convolutional layer
             layer_index = st.slider(
-                "Select Conv Layer for Grad-CAM",
+                "Adjust Slider To View Different Convolutional Layers",
                 min_value=0,
                 max_value=len(conv_layers) - 1,
                 value=0,
@@ -117,7 +117,6 @@ def main():
                 format="%d"
             )
             selected_layer = conv_layers[layer_index]
-            st.write(f"Selected Layer: {selected_layer}")
 
             # Generate Grad-CAM heatmap
             heatmap = make_gradcam_heatmap(processed_image, model, last_conv_layer_name=selected_layer)
