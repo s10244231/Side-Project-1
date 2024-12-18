@@ -94,7 +94,7 @@ def main():
             col1, col2 = st.columns([1, 1])  # Create two equal columns for alignment
 
             with col1:
-                st.image(image, caption="Original Image", use_column_width=True)
+                st.image(image, caption="Original Image", use_container_width=True)
             
             # Preprocess the image for Grad-CAM
             processed_image = preprocess_image(image)
@@ -124,7 +124,7 @@ def main():
 
             # Display Grad-CAM
             with col2:
-                st.image(gradcam_image, caption=f"Grad-CAM Heatmap ({selected_layer})", use_column_width=True)
+                st.image(gradcam_image, caption=f"Grad-CAM Heatmap ({selected_layer})", use_container_width=True)
 
         except Exception as e:
             st.error(f"Error processing image: {e}")
